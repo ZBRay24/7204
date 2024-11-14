@@ -7,20 +7,19 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* 使内容垂直排列 */
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
-            height: 100vh; /* 使 body 高度为视口高度 */
-            margin: 0; /* 去掉默认的 margin */
-            background-color: white; /* 可选的背景色 */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 240vh;
+            margin: 0;
+            background-color: white;
         }
         h1 {
-            text-align: center; /* 标题居中 */
-            margin-bottom: 20px; /* 标题与地图之间的间距 */
+            text-align: center;
+            margin-bottom: 20px;
         }
         #map {
-            /* 去掉边框 */
-            background-color: white; /* 可选的背景色 */
+            background-color: white;
         }
         .tooltip {
             position: absolute;
@@ -34,12 +33,26 @@
             border-radius: 8px;
             pointer-events: none;
         }
+        #chart {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Interactive Visualization of Dependency Ratio</h1> <!-- 添加标题 -->
+    <h1>Interactive Visualization of Dependency Ratio</h1>
+    <select id="chartSelector">
+        <option value="">Select Chart</option>
+        <option value="1">Elderly Dependency Ratio Forecast in Developed City</option>
+        <option value="2">Elderly Dependency Ratio Forecast in Developing City</option>
+        <option value="3">Elderly Dependency Ratio Forecast in Undeveloped City</option>
+        <option value="4">Aging Pressure Zone in China</option>
+        <option value="5">Population Age Distribution by Province in 2002, 2012, 2022</option>
+        <option value="6">Elderly Dependency Ratio Clustering with Map in 2002, 2012, 2022</option>
+        <option value="7">Child and Elderly Dependency Ratio by Province</option>
+    </select>
     <div id="map"></div>
     <div id="tooltip" class="tooltip" style="opacity:0;"></div>
+    <div id="chart"></div>
     <script src="script.js"></script>
 </body>
 </html>
